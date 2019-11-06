@@ -461,4 +461,4 @@ Route::get('/app/bulk.ly/free/{code}','Auth\RegisterController@validUserRegistra
 Route::post('/app/bulk.ly/free/signUp/{code}','Auth\RegisterController@validUserRegistration');
 
 Route::get('/history','HistoryController@index');
-Route::post('/h-search','HistoryController@hSearch')->name('h.search');
+Route::any('/h-search','HistoryController@hSearch')->name('h.search');

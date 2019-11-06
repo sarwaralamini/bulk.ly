@@ -91,7 +91,7 @@
 				</tbody> 
 			</table>
 			<div style="background-color:#cccccc;">
-				<?php echo e($histories->links()); ?>
+				<?php echo e($histories->appends(request()->input())->links()); ?>
 
 			</div>
 		</div>

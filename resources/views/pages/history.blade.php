@@ -91,7 +91,7 @@
 				</tbody> 
 			</table>
 			<div style="background-color:#cccccc;">
-				{{ $histories->links() }}
+				{{ $histories->appends(request()->input())->links() }}
 			</div>
 		</div>
 	</div>
