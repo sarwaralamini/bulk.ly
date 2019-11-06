@@ -6,14 +6,15 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="search">
-				<form>
+				<form method="POST" action="{{ route('h.search') }}">
+				    {{ csrf_field() }}
 					<div class="row">
 						<div class="col-md-4">
 						  <div class="form-group">
 							<label class="sr-only" for="exampleInputAmount"></label>
 							<div class="input-group">
 							  <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
-							  <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
+							  <input type="text" name="text" class="form-control" id="exampleInputAmount" placeholder="Search">
 							</div>
 						  </div>
 						</div>
@@ -22,7 +23,7 @@
 							<label class="sr-only" for="exampleInputAmount"></label>
 							<div class="input-group">
 							  <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-							  <input type="text" class="form-control" id="datepicker" placeholder="Select Date">
+							  <input type="text" name="date" class="form-control" id="datepicker" placeholder="Select Date">
 							</div>
 						  </div>
 						</div>
@@ -30,7 +31,7 @@
 							<div class="form-group">
 								<label class="sr-only" for="exampleInputAmount"></label>
 								<div class="input-group">
-								  <select class="form-control" style="width: auto">
+								  <select class="form-control" style="width: auto" name="group">
 									<option>All Groups</option>
 									@foreach($allgroups as $group)
 										<option value="{{ $group->id }}">{{ ucwords(str_replace("-"," ",$group->type)) }}</option>
@@ -39,6 +40,7 @@
 								</div>
 							</div>
 						</div>
+						<button class="btn btn-primary">Search</button>
 					</div>
 				</form>
 			</div>
