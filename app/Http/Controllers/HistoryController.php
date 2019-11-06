@@ -17,7 +17,7 @@ class HistoryController extends Controller
 	
 	public function hSearch(Request $request){
 		$text = $request->text;
-		$date = $request->date;
+		$date = date('Y-m-d', strtotime($request->date));
 		$group = $request->group;
 		
 		$histories = BufferPosting::where('post_text',$text)
