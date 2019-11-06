@@ -9,13 +9,75 @@
     <link rel="stylesheet" type="text/css" href="//fast.appcues.com/widget.css"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <link rel=”stylesheet” href=” https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <script src=”https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-
-
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+	<link rel=”stylesheet” href=” https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <script src=”https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	
+
+    <style>
+		.pagination{
+			float:right!important;
+		}
+		.gj-datepicker-md [role=right-icon] {
+			display:none;
+			position: absolute!important;
+			right: 0px!important;
+			top: 3px!important;
+			font-size: 33px!important;
+			width: 30p!important;
+		}
+		
+		.gj-textbox-md {
+			border: none;
+			display: block;
+			border: 1px solid #ccd0d2;
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 16px;
+			line-height: 16px;
+			padding: 4px 16px;
+			margin: 0;
+			width: 100%;
+			background: 0 0;
+			text-align: left;
+			border-radius: 0px;
+			color: rgba(0,0,0,.87);
+			background-color: #FFFFFF;
+		}
+		
+		.select2-container--default .select2-selection--single {
+			background-color: #fff;
+			border: 1px solid #aaa;
+			border-radius: 4px;
+			height: 36px;
+		}
+		
+		.select2-container--default .select2-selection--single .select2-selection__rendered {
+			color: #444;
+			line-height: 36px;
+		}
+		
+		.social-icon-avatar{
+			width: 20px;
+			height: 20px;
+			background: #3097d1;
+			color: #FFFFFF;
+			font-size: 10px;
+			border-radius: 50%;
+			position: relative;
+			top: -48px;
+			left: 34px;
+			border: 2px solid #FFFFFF;
+		}
+		
+		.social-icon-avatar i {
+			position: relative;
+			top: 1px;
+			left: 5px;
+		}
+	</style>
+	
     <script type="text/javascript">
         window.Laravel = {!! json_encode([
 			'csrfToken' => csrf_token(),
@@ -332,6 +394,8 @@ if($user_meta['temp_user'] === true){
 <script src="//fast.appcues.com/widget-bundle.js" type="text/javascript"></script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script>
 
     var hash = window.location.hash;
@@ -679,5 +743,13 @@ if($user_meta['temp_subs'] === true){
         }
     });
 </script>
+<script>
+	$('#datepicker').datetimepicker({ footer: true, header: true });
+	$(document).ready(function() {
+		$('.allgroups').select2();
+	});
+</script>
+
+
 </body>
 </html>
